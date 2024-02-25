@@ -370,7 +370,8 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
       }
     }
 
-    const socket = socketIOClient(props.apiHost as string);
+    //const socket = socketIOClient(props.apiHost as string);
+    const socket = socketIOClient('https://ai.taroticar.com');
 
     socket.on('connect', () => {
       setSocketIOClientId(socket.id);
