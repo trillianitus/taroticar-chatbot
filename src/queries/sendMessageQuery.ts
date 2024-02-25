@@ -16,26 +16,26 @@ export type MessageRequest = {
   body?: IncomingInput;
 };
 
-export const sendMessageQuery = ({ chatflowid, apiHost = 'http://localhost:3000', body }: MessageRequest) =>
+export const sendMessageQuery = ({ chatflowid, apiHost = 'https://ai.taroticar.com', body }: MessageRequest) =>
   sendRequest<any>({
     method: 'POST',
     url: `${apiHost}/api/v1/prediction/${chatflowid}`,
     body,
   });
 
-export const getChatbotConfig = ({ chatflowid, apiHost = 'http://localhost:3000' }: MessageRequest) =>
+export const getChatbotConfig = ({ chatflowid, apiHost = 'https://ai.taroticar.com' }: MessageRequest) =>
   sendRequest<any>({
     method: 'GET',
     url: `${apiHost}/api/v1/public-chatbotConfig/${chatflowid}`,
   });
 
-export const isStreamAvailableQuery = ({ chatflowid, apiHost = 'http://localhost:3000' }: MessageRequest) =>
+export const isStreamAvailableQuery = ({ chatflowid, apiHost = 'https://ai.taroticar.com' }: MessageRequest) =>
   sendRequest<any>({
     method: 'GET',
     url: `${apiHost}/api/v1/chatflows-streaming/${chatflowid}`,
   });
 
-export const sendFileDownloadQuery = ({ apiHost = 'http://localhost:3000', body }: MessageRequest) =>
+export const sendFileDownloadQuery = ({ apiHost = 'https://ai.taroticar.com', body }: MessageRequest) =>
   sendRequest<any>({
     method: 'POST',
     url: `${apiHost}/api/v1/openai-assistants-file`,
